@@ -16,7 +16,7 @@ if [ $choice -eq 1 ] ; then
 
 	echo ""
 	echo "Downloading NadekoBot, please wait."
-	curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_installer_latest.sh | sh
+	wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_installer_latest.sh && bash nadeko_installer_latest.sh
 	echo ""
 	echo "NadekoBot script downloaded."
 	bash linuxAIO.sh
@@ -24,7 +24,7 @@ else
 		if [ $choice -eq 2 ] ; then
 			echo ""
 			echo "Running Nadeko Normally, if you are running this to check Nadeko, use .die command on discord to stop Nadeko."
-			curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_run.sh | sh
+			wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_run.sh && bash nadeko_run.sh
 			echo ""
 			echo "Welcome back to NadekoBot."
 			bash linuxAIO.sh

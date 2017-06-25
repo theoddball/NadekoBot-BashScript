@@ -12,11 +12,11 @@ while [ $choice -eq 4 ]; do
 read choice
 if [ $choice -eq 1 ] ; then
 	echo ""
-	curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARN.sh | sh
+	wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARN.sh && bash NadekoARN.sh
 else
 	if [ $choice -eq 2 ] ; then
 		echo ""
-		curl -L https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARU_Latest.sh | sh
+		wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARU_Latest.sh && bash NadekoARU_Latest.sh
 	else
 			if [ $choice -eq 3 ] ; then
 				echo ""

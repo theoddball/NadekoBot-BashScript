@@ -1,7 +1,9 @@
 #!/bin/sh
-echo ""
+clear
 echo "Welcome to NadekoBot Auto Restart and Update!"
 echo ""
+root=$(pwd)
+
 
 choice=4
 	echo "1. Run Auto Restart normally without updating NadekoBot."
@@ -12,15 +14,16 @@ while [ $choice -eq 4 ]; do
 read choice
 if [ $choice -eq 1 ] ; then
 	echo ""
-	wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARN.sh && bash NadekoARN.sh
+	wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARN.sh && bash "$root/NadekoARN.sh"
 else
 	if [ $choice -eq 2 ] ; then
 		echo ""
-		wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARU_Latest.sh && bash NadekoARU_Latest.sh
+		wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/NadekoARU_Latest.sh && bash "$root/NadekoARU_Latest.sh"
 	else
 			if [ $choice -eq 3 ] ; then
 				echo ""
 				echo "Exiting..."
+				cd "$root"
 				exit 0
 			else
 				clear
@@ -34,4 +37,6 @@ else
 	fi
 fi
 done
+
+cd "$root"
 exit 0

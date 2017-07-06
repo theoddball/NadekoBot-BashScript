@@ -3,6 +3,7 @@ echo ""
 echo "NadekoBot 1.5+"
 echo "Mirai was here."
 root=$(pwd)
+youtube-dl -U
 
 if hash dotnet 2>/dev/null
 then

@@ -1,11 +1,16 @@
 #!/bin/sh
 echo ""
 echo "Running NadekoBot with auto restart and updating to latest build!"
+root=$(pwd)
+
 sleep 5s
-while :; do cd NadekoBot && dotnet restore && dotnet build --configuration Release && cd - && cd NadekoBot/src/NadekoBot && dotnet run -c Release && cd - && wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_installer_latest.sh && bash nadeko_installer_latest.sh; sleep 5s; done
+while :; do cd "$root/NadekoBot" && dotnet restore && dotnet build --configuration Release && cd "$root/NadekoBot/src/NadekoBot" && dotnet run -c Release && cd "$root" && wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.4/nadeko_installer_latest.sh && bash "$root/nadeko_installer_latest.sh"; sleep 5s; done
 echo ""
 echo "That didn't work? Please report in #NadekoLog Discord Server."
 sleep 3s
-bash linuxAIO.sh
+
+cd "$root"
+bash "$root/linuxAIO.sh"
 echo "Done"
+
 exit 0

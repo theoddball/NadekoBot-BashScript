@@ -1,7 +1,8 @@
 #!/bin/sh
-
-echo "NadekoBot 1.0"
+echo ""
+echo "NadekoBot 1.5+"
 echo "Mirai was here."
+root=$(pwd)
 
 if hash dotnet 2>/dev/null
 then
@@ -10,12 +11,13 @@ else
 	echo "Dotnet is not installed. Please install dotnet."
 	exit 1
 fi
-cd NadekoBot
+cd "$root/NadekoBot"
 dotnet restore
 dotnet build --configuration Release
-cd src/NadekoBot
+cd "$root/NadekoBot/src/NadekoBot"
 echo "Running NadekoBot. Please wait."
 dotnet run --configuration Release
 echo "Done"
 
+cd "$root"
 exit 0

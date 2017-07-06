@@ -2,6 +2,7 @@
 echo ""
 echo "Running NadekoBot with auto restart normally! (without updating)"
 root=$(pwd)
+youtube-dl -U
 
 sleep 5s
 cd "$root/NadekoBot"

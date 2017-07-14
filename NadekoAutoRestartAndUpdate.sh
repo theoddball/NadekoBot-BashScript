@@ -1,5 +1,5 @@
 #!/bin/sh
-clear
+echo ""
 echo "Welcome to NadekoBot Auto Restart and Update!"
 echo ""
 root=$(pwd)
@@ -39,4 +39,5 @@ fi
 done
 
 cd "$root"
+rm "$root/NadekoAutoRestartAndUpdate.sh"
 exit 0

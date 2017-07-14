@@ -1,8 +1,8 @@
 #!/bin/sh
-clear
+
 echo "Welcome to NadekoBot."
 root=$(pwd)
-
+echo ""
 choice=7
 	echo "1. Download NadekoBot"
 	echo "2. Run Nadeko (Normally)"

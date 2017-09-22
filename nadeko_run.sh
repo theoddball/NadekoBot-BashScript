@@ -1,6 +1,6 @@
 #!/bin/sh
 echo ""
-echo "NadekoBot 1.5+"
+echo "NadekoBot 1.9+"
 echo "Mirai was here."
 root=$(pwd)
 youtube-dl -U

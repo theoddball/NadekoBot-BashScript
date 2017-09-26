@@ -72,13 +72,6 @@ echo ""
 echo "----------"
 echo ""
 
-echo Please enter your bot ID \(should be same as your client ID\):
-read botid
-echo Alright saved \'$botid\' as your Bot ID.
-echo ""
-echo "----------"
-echo ""
-
 echo Please enter your bot token \(It is not bot secret, it should be ~59 characters long.\):
 read token
 echo Alright saved \'$token\' as your bot\'s token.
@@ -121,16 +114,29 @@ echo ""
 echo "----------"
 echo ""
 
+echo Please enter Cleverbot Api Key or Just Press [Enter Key] to skip. \(optional\) \(Refer to the JSON Explanations guide.\):
+read cleverbot
+echo Alright saved \'$cleverbot\'
+echo ""
+echo "----------"
+echo ""
+
 echo Please enter Patreon Access Token or Just Press [Enter Key] to skip. \(optional\) \(Refer to the JSON Explanations guide.\):
-read scid
-echo Alright saved \'$patreon\'
+read patreontoken
+echo Alright saved \'$patreontoken\'
+echo ""
+echo "----------"
+echo ""
+
+echo Please enter Patreon Campaign ID or Just Press [Enter Key] to skip. \(optional\) \(Refer to the JSON Explanations guide.\):
+read patreoncid
+echo Alright saved \'$patreoncid\'
 echo ""
 echo "----------"
 echo ""
 
 echo "{
   \"ClientId\": $clientid,
-  \"BotId\": $botid,
   \"Token\": \"$token\",
   \"OwnerIds\": [
     $ownerid
@@ -139,7 +145,9 @@ echo "{
   \"GoogleApiKey\": \"$googleapi\",
   \"MashapeKey\": \"$mashapekey\",
   \"OsuApiKey\": \"$osu\",
-  \"PatreonAccessToken\": \"$patreon\",
+  \"CleverbotApiKey\": \"$cleverbot\",
+  \"PatreonAccessToken\": \"$patreontoken\",
+  \"PatreonCampaignId\": \"$patreoncid\",
   \"Db\": null,
   \"TotalShards\": 1
 }" | cat - >> credentials.json

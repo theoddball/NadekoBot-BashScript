@@ -121,20 +121,6 @@ echo ""
 echo "----------"
 echo ""
 
-echo Please enter Patreon Access Token or Just Press [Enter Key] to skip. \(optional\) \(Refer to the JSON Explanations guide.\):
-read patreontoken
-echo Alright saved \'$patreontoken\'
-echo ""
-echo "----------"
-echo ""
-
-echo Please enter Patreon Campaign ID or Just Press [Enter Key] to skip. \(optional\) \(Refer to the JSON Explanations guide.\):
-read patreoncid
-echo Alright saved \'$patreoncid\'
-echo ""
-echo "----------"
-echo ""
-
 echo "{
   \"ClientId\": $clientid,
   \"Token\": \"$token\",
@@ -146,8 +132,6 @@ echo "{
   \"MashapeKey\": \"$mashapekey\",
   \"OsuApiKey\": \"$osu\",
   \"CleverbotApiKey\": \"$cleverbot\",
-  \"PatreonAccessToken\": \"$patreontoken\",
-  \"PatreonCampaignId\": \"$patreoncid\",
   \"Db\": null,
   \"TotalShards\": 1
 }" | cat - >> credentials.json

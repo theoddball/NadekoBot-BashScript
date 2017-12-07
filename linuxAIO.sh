@@ -155,7 +155,7 @@ bash "$root/linuxAIO.sh"
 							if [ $choice -eq 7 ] ; then
 							echo ""
 							echo "Getting the pm2 startup options for NadekoBot.."
-							wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekopm2start.sh && bash "$root/nadekopm2start.sh"
+							wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekobotpm2start.sh && bash "$root/nadekobotpm2start.sh"
 							echo ""
 							echo "That did not work?"
 							sleep 2s

@@ -3,15 +3,17 @@
 echo "Welcome to NadekoBot."
 root=$(pwd)
 echo ""
-choice=7
+choice=9
 	echo "1. Download NadekoBot"
 	echo "2. Run Nadeko (Normally)"
 	echo "3. Run Nadeko with Auto Restart"
 	echo "4. Auto-Install Prerequisites (For Ubuntu, Debian and CentOS)"
 	echo "5. Set up credentials.json (If you have downloaded NadekoBot already)"
-	echo "6. Exit"
-	echo -n "Choose [1] to Download, [2 or 3] to Run, or [6] to Exit"
-while [ $choice -eq 7 ]; do
+	echo "6. Set up pm2 for NadekoBot (see README!)"
+	echo "7. Start Nadeko in pm2 (complete option 6 first)"
+	echo "8. Exit"
+	echo -n "Choose [1] to Download, [2 or 3] to Run, [6 and 7] for pm2 setup/startup (see README!) or [8] to Exit."
+while [ $choice -eq 9 ]; do
 read choice
 if [ $choice -eq 1 ] ; then
 
@@ -142,21 +144,42 @@ cd "$root"
 bash "$root/linuxAIO.sh"
 					else
 						if [ $choice -eq 6 ] ; then
-							echo ""
-							echo "Exiting..."
-							cd "$root"
-							exit 0
+						echo ""
+						echo "Starting the setuo for pm2 with NadekoBot. This only has to be done once."
+						wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekopm2setup.sh && bash "$root/nadekopm2setup.sh"
+						echo ""
+						echo "Welcome back..."
+						sleep 2s
+						bash "$root/linuxAIO.sh"	
 						else
-							clear
-							echo "1. Download NadekoBot"
-							echo "2. Run Nadeko (Normally)"
-							echo "3. Run Nadeko with Auto Restart"
-							echo "4. Auto-Install Prerequisites (For Ubuntu, Debian and CentOS)"
-							echo "5. Set up credentials.json (If you have downloaded NadekoBot already)"
-							echo "6. Exit"
-							echo -n "Choose [1] to Download, [2 or 3] to Run, or [6] to Exit."
-							choice=7
-						fi
+							if [ $choice -eq 7 ] ; then
+							echo ""
+							echo "Getting the pm2 startup options for NadekoBot.."
+							wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekopm2start.sh && bash "$root/nadekopm2start.sh"
+							echo ""
+							echo "That did not work?"
+							sleep 2s
+							bash "$root/linuxAIO.sh"
+							else
+								if [ $choice -eq 8 ] ; then
+									echo ""
+									echo "Exiting..."
+									cd "$root"
+									exit 0
+								else
+									clear
+									echo "1. Download NadekoBot"
+									echo "2. Run Nadeko (Normally)"
+									echo "3. Run Nadeko with Auto Restart"
+									echo "4. Auto-Install Prerequisites (For Ubuntu, Debian and CentOS)"
+									echo "6. Set up pm2 for NadekoBot (see README!)"
+									echo "7. Start Nadeko in pm2 (complete option 6 first)"
+									echo "8. Exit"
+									echo -n "Choose [1] to Download, [2 or 3] to Run, [6 and 7] for pm2 setup/startup (see README!) or [8] to Exit."
+									choice=9
+								fi
+							fi	
+						fi 
 					fi
 				fi
 			fi

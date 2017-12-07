@@ -145,7 +145,7 @@ bash "$root/linuxAIO.sh"
 					else
 						if [ $choice -eq 6 ] ; then
 						echo ""
-						echo "Starting the setuo for pm2 with NadekoBot. This only has to be done once."
+						echo "Starting the setup for pm2 with NadekoBot. This only has to be done once."
 						wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekopm2setup.sh && bash "$root/nadekopm2setup.sh"
 						echo ""
 						echo "Welcome back..."
@@ -157,7 +157,6 @@ bash "$root/linuxAIO.sh"
 							echo "Getting the pm2 startup options for NadekoBot.."
 							wget -N https://github.com/Kwoth/NadekoBot-BashScript/raw/1.9/nadekobotpm2start.sh && bash "$root/nadekobotpm2start.sh"
 							echo ""
-							echo "That did not work?"
 							sleep 2s
 							bash "$root/linuxAIO.sh"
 							else

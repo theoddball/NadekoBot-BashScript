@@ -405,5 +405,5 @@ sleep 2
 
 cd "$root"
 rm "$root/nadekoautoinstaller.sh"
-# run dos2unix
+
 exit 0

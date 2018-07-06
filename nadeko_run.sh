@@ -14,10 +14,10 @@ else
 fi
 cd "$root/NadekoBot"
 dotnet restore
-dotnet build --configuration Release
+dotnet build -c Release
 cd "$root/NadekoBot/src/NadekoBot"
 echo "Running NadekoBot. Please wait."
-dotnet run
+dotnet run -c Release
 echo "Done"
 
 cd "$root"

@@ -84,7 +84,7 @@ read -n 1 -s -p "Press any key to continue..."
 	sudo apt-get install -y build-essential
 	sudo npm i -g npm
 	echo "Installing pm2..."
-	sudo npm install pm2 -g
+	sudo npm install pm2@3.1.3 -g
 fi
 	
 if [ "$OS" = "Debian" ]; then
@@ -99,7 +99,7 @@ read -n 1 -s -p "Press any key to continue..."
 	sudo apt-get install -y build-essential
 	sudo npm i -g npm
 	echo "Installing pm2..."
-	sudo npm install pm2 -g
+	sudo npm install pm2@3.1.3 -g
 fi
 	
 if [ "$OS" = "LinuxMint" ]; then
@@ -114,7 +114,7 @@ read -n 1 -s -p "Press any key to continue..."
 	sudo apt-get install -y build-essential
 	sudo npm i -g npm
 	echo "Installing pm2..."
-	sudo npm install pm2 -g
+	sudo npm install pm2@3.1.3 -g
 fi
 
 if [ "$OS" = "CentOS" ]; then
@@ -129,7 +129,7 @@ read -n 1 -s -p "Press any key to continue..."
 	sudo yum install gcc-c++ make
 	sudo npm i -g npm
 	echo "Installing pm2..."
-	sudo npm install pm2 -g
+	sudo npm install pm2@3.1.3 -g
 fi
 
 

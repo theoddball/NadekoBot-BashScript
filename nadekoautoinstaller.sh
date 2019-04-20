@@ -383,9 +383,9 @@ elif [ "$OS" = "CentOS" ]; then
 		sudo yum install libunwind libicu -y
 		sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 		sudo yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm epel-release
-		sudo yum install git opus opus-devel ffmpeg tmux yum-utils -y
-		sudo yum -y groupinstall development
 		sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+		sudo yum install git2u opus opus-devel ffmpeg tmux yum-utils -y
+		sudo yum -y groupinstall development
 		sudo yum --obsoletes --exclude=kernel* update -y
 		sudo yum install python python36u python36u-pip python36u-devel dotnet-sdk-2.1 -y
 		sudo yum install redis -y
